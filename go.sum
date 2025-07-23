@@ -1,0 +1,4 @@
+github.com/Sh4wnK/Govee v0.0.0-20250722215411-c0bf1f4da188 h1:tGrRNCdUOzBz71FyXavWb2YdjWACYUujl4SDeeTM2c4=
+github.com/Sh4wnK/Govee v0.0.0-20250722215411-c0bf1f4da188/go.mod h1:NhkG8WvR3Q8hOlJTNv7ob43+dTAjsz0FkwuDwWd6gJE=
+github.com/google/uuid v1.6.0 h1:NIvaJDMOsjHA8n1jAhLSgzrAzy1Hgr+hNrb57e+94F0=
+github.com/google/uuid v1.6.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
