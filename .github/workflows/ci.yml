@@ -11,17 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      # Spotvee builds against the Govee wrapper via a replace directive.
-      # CI checks out the sibling repo's default branch; the parent may
-      # switch this to a tagged release (v0.1.0) once published.
-      - name: Checkout Govee
-        uses: actions/checkout@v4
-        with:
-          repository: Sh4wnK/Govee
-          path: ../Govee
 
       - uses: actions/setup-go@v5
         with:

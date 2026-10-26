@@ -4,9 +4,7 @@
 FROM golang:1.23-alpine AS build
 WORKDIR /src
 
-# The Govee wrapper is a sibling module; copy it in for the replace directive.
 COPY go.mod go.sum ./
-COPY ../Govee /src/govee
 
 # Cache module downloads first.
 RUN go mod download
