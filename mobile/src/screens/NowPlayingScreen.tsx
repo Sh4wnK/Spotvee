@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   Image,
@@ -15,17 +15,14 @@ import { Api, hexColor, Metrics, State } from '../api/client';
 
 interface Props {
   api: Api;
-  onStream: (state: State) => void;
   streamState: State | null;
 }
 
-export default function NowPlayingScreen({ api, onStream, streamState }: Props) {
+export default function NowPlayingScreen({ api, streamState }: Props) {
   const [authenticated, setAuthenticated] = useState<boolean | null>(null);
   const [loginLoading, setLoginLoading] = useState(false);
   const [syncing, setSyncing] = useState(false);
   const [metrics, setMetrics] = useState<Metrics | null>(null);
-  const streamRef = useRef<State | null>(streamState);
-  streamRef.current = streamState;
 
   const state = streamState ?? {
     track: { id: '', name: '', artist: '', album: '', art_url: '', duration_ms: 0 },
@@ -45,11 +42,6 @@ export default function NowPlayingScreen({ api, onStream, streamState }: Props) 
   useEffect(() => {
     void loadAuth();
   }, [loadAuth]);
-
-  useEffect(() => {
-    onStream(state); // keep parent streamState fresh via callback
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const openLogin = async () => {
     setLoginLoading(true);

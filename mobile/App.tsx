@@ -45,8 +45,6 @@ export default function App() {
     attachStream(client);
   };
 
-  const handleStream = useCallback((s: State) => setStreamState(s), []);
-
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
@@ -67,13 +65,7 @@ export default function App() {
             />
           </View>
 
-          {screen === 'now' ? (
-            <NowPlayingScreen
-              api={api}
-              onStream={handleStream}
-              streamState={streamState}
-            />
-          ) : null}
+          {screen === 'now' ? <NowPlayingScreen api={api} streamState={streamState} /> : null}
           {screen === 'devices' ? <DevicesScreen api={api} /> : null}
           {screen === 'connection' ? (
             <ConnectionScreen api={api} onConnected={handleConnected} />
