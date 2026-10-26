@@ -1,0 +1,26 @@
+# Binaries and build output
+/spotvee
+/soak
+/bin/
+/dist/
+
+# Local runtime state (tokens and sync state must never be committed)
+*.token.json
+spotvee-state.json
+.env
+
+# Go
+vendor/
+
+# Node / Expo (mobile)
+mobile/node_modules/
+mobile/.expo/
+mobile/dist/
+mobile/web-build/
+npm-debug.log*
+yarn-error.log*
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
